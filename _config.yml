@@ -117,6 +117,9 @@ friends: [
     #     title: "Su",
     #     href: "http://su.gallery/"
     # },{
+        title: "Hux",
+        href: "https://huangxuan.me/"
+    },{
         title: "乱序",
         href: "http://mida.re/"
     },{
