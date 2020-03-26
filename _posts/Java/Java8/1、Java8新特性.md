@@ -1,0 +1,566 @@
+---
+layout:     post
+title:      Java8新特性
+subtitle:   
+date:       2020-03-26
+author:     BY
+header-img: img/post-bg-ios9-web.jpg
+catalog: true
+tags:
+    - Java
+    - Java8
+---
+
+
+
+# 主要内容
+
+1. Lambda 表达式
+2. 函数式接口
+3. 方法引用与构造器引用
+4. Stream API
+5. 接口中的默认方法与静态方法
+6. 新时间日期API
+7. 与其他新特性
+
+## 优点
+- 速度更快(数据结构、内存优化)
+- 代码更少（增加了新的语法Lambda表达式）
+- 强大的Stream API
+- 便于并行
+- 最大化减少空指针异常Optional
+
+# 1. Lambda 表达式
+## 1.1 基础语法
+### 1.1.1 操作符“->”
+- Java8中引入了一个新的操作符“->”该操作符称为箭头操作符或Lambda操作符；
+- 箭头操作符将Lambda表达式拆分为两部分：
+
+左侧：Lambda表达式的参数列表
+
+右侧：Lambda表达式中所需要执行的功能，即Lambda体
+
+1. 语法格式一：无参数，无返回值
+
+```
+/*
+ * 	语法格式一：无参数，无返回值 
+ *  () -> System.out.println("Hello Lambda!");
+ */
+public void test1() {
+	Runnable r =new Runnable() {
+		
+		public void run() {
+			System.out.println("Hello World!");
+		}
+	};
+	
+	Runnable r1 = () ->System.out.println("Hello World!");
+}
+```
+
+2. 语法二：有一个参数，无返回值
+
+```
+/*
+ * 	语法格式二：有一个参数，无返回值
+ *  (x) -> System.out.println(x);
+ */
+public void test2() {
+	Consumer<String> con = (x) -> System.out.println(x);
+	con.accept("学习Lambda");
+}
+```
+
+3. 语法格式三：若只有一个参数，小括号可以省略不写
+
+```
+/*
+ * 	语法格式三：若只有一个参数，小括号可以省略不写
+ *  x -> System.out.println(x);
+ */
+public void test3() {
+	Consumer<String> con = x -> System.out.println(x);
+	con.accept("学习Lambda");
+}
+```
+
+4. 语法格式四：有两个以上的参数，有返回值，并且Lambda体中有多条语句
+
+```
+/*
+ * 	语法格式四：有两个以上的参数，有返回值，并且Lambda体中有多条语句
+ *  Comparator<Integer> com = (x,y) -> {
+ *		System.out.println("函数式接口，比较x："+x+"  y："+y);
+ *		return Integer.compare(x, y);
+ *	};
+ */
+public void test4() {
+	Comparator<Integer> com = (x,y) -> {
+		System.out.println("函数式接口，比较x："+x+"  y："+y);
+		return Integer.compare(x, y);
+	};
+	com.compare(22, 33);
+}
+```
+
+5. 语法格式五：若Lambda体中只有一条语句，return和大括号都可以省略不写
+
+```
+/*
+ * 	语法格式五：若Lambda体中只有一条语句，return和大括号都可以省略不写
+ *  Comparator<Integer> com = (x,y) -> Integer.compare(x, y);
+ */
+public void test5() {
+	Comparator<Integer> com = (x,y) -> Integer.compare(x, y);
+	com.compare(22, 33);
+}
+```
+
+6. 语法格式六：Lambda表达式的参数列表的数据类型可以省略不写，因为JVM编译器通过上下文推断出数据类型，即“类型推断”
+
+```
+/*
+ * 	语法格式六：Lambda表达式的参数列表的数据类型可以省略不写，因为JVM编译器通过上下文推断出数据类型，即“类型推断”
+ *  Comparator<Integer> com = (Integer x,Integer y) -> Integer.compare(x, y);
+ */
+public void test6() {
+	Comparator<Integer> com = (Integer x,Integer y) -> Integer.compare(x, y);
+	com.compare(22, 33);
+}
+```
+
+7. 练习： 对一个数进行运算
+
+```
+/**
+ *	运算抽象接口
+ *
+ */
+@FunctionalInterface
+public interface MyFun {
+
+	Integer getValue(Integer num);
+}
+
+/*
+ *	需求： 对一个数进行运算 
+ *	
+ */
+public void test7() {
+	operation(100, (x) -> x * x);
+}
+
+public Integer operation(Integer num,MyFun mf) {
+	return mf.getValue(num);
+}
+```
+
+
+**总结**
+- 口诀
+
+ 左右遇一括号省
+
+ 左侧推断类型省
+
+- Lambda表达式需要“函数式接口”的支持
+
+函数式接口：接口中只有一个抽象方法的接口，称为函数式接口。可以使用@FunctionalInterface修饰，含义检查是否是函数式接口。
+
+### 1.1.2 练习
+**练习一**
+
+1. 声明一个带两个泛型的函数式接口，泛型类型为<T,R>T为参数，R为返回值
+2. 接口中声明对应抽象方法
+3. 在下面方法中，使用接口作为参数，计算两个long型参数的和
+4. 再计算两个long型参数的乘积
+
+```
+public interface MyFun3<T,R> {
+
+	R getValue(T t1,T t2);
+}
+
+@Test
+public void test1() {
+	op(100L, 200L, (x,y) -> x+y);
+	op(100L, 200L, (x,y) -> x*y);
+}
+
+private void op(Long l1,Long l2, MyFun3<Long, Long> mf3) {
+	Long value = mf3.getValue(l1, l2);
+	System.out.println("计算后的值为："+value);
+}
+```
+
+# 2 四大内置核心函数式接口
+1. Consumer<T> :消费型接口 
+
+抽象方法：void accept(T t);
+```
+/*
+ * 1、Consumer<T> :消费型接口
+ */
+@Test
+public void test1() {
+	happy(1000.0, (x) -> System.out.println("消费："+x));
+}
+
+public void happy(Double money , Consumer<Double> con) {
+	con.accept(money);
+}
+```
+
+2. Supplier<T> : 供给型接口
+
+抽象方法：T get();
+```
+/*
+ * 2、Supplier<T> : 供给型接口
+ * T get();
+ */
+@Test
+public void test2() {
+	List<Integer> numList = getNumList(3, () -> (int)(Math.random()*100));
+	for (Integer integer : numList) {
+		System.out.println(integer);
+	}
+}
+
+/*
+ * 	 需求 : 产生指定个数的整数，并放入集合
+ */
+public List<Integer> getNumList(int num , Supplier<Integer> sup) {
+	List<Integer> list = new ArrayList<Integer>();
+	for (int i = 0; i < num; i++) {
+		Integer integer = sup.get();
+		list.add(integer);
+	}
+	return list;
+}
+```
+
+3. Function<T,R> : 函数型接口
+
+抽象方法：R apply(T t);
+```
+/*
+ * 3、Function<T,R> : 函数型接口
+ * 		R apply(T t);
+ */
+@Test
+public void test3() {
+	String strHandler = strHandler("我爱天津", (x) -> x + "!");
+	System.out.println(strHandler);
+}
+
+/*
+ * 	需求：用于处理字符串
+ */
+public String strHandler(String str ,Function<String, String> fun) {
+	return fun.apply(str);
+}
+```
+
+4. Predicate<T> : 断言型接口
+
+抽象方法：boolean test(T t);
+```
+/*
+ * 4、Predicate<T> : 断言型接口
+ * 		boolean test(T t);
+ */
+@Test
+public void test4() {
+	List<String> list = new ArrayList<String>();
+	list.add("222");
+	list.add("3333");
+	list.add("44444");
+	list.add("555555");
+	List<String> filterStr = filterStr(list, (x)-> x.length() >4);
+	for (String string : filterStr) {
+		System.out.println(string);
+	}
+}
+
+/*
+ * 	需求：满足条件的字符串放入集合中
+ */
+public List<String> filterStr(List<String> list ,Predicate<String> pre){
+	List<String> strList = new ArrayList<String>();
+	for (String string : list) {
+		if(pre.test(string)) {
+			strList.add(string);
+		}
+	}
+	return strList;
+} 
+```
+
+# 3. 方法引用和构造器引用
+## 3.1 方法引用
+方法引用：若Lambda体中的内容有方法已经实现了，我们可以使用“方法引用”（可以理解为方法引用是Lambda表达式的另外一种表现形式）
+
+注意：
+- Lambda体中调用方法参数与返回值类型与函数式接口中抽象方法函数列表、返回值一致（三种方式都需要满足这个规则）
+
+主要有三种语法格式
+1. 对象：：实例方法名
+
+```
+/*
+ * 1、对象：：实例方法名
+ */
+@Test
+public void test1() {
+	Consumer<String> con = (x) -> System.out.println(x);
+	
+	PrintStream ps = System.out;
+	Consumer<String> con1 = ps::println;
+	
+	Consumer<String> con2 = System.out::printf;
+	con2.accept("好吃不贵");
+	
+	Person p = new Person();
+	p.setName("中国加油！");
+	Supplier<String> sup = p::getName;
+	System.out.println("==="+sup.get());
+}
+```
+
+2. 类：：静态方法名
+
+```
+/*
+ * 2、类：：静态方法名
+ */
+@Test
+public void test2() {
+	//Lambda方式
+	Comparator<Integer> com = (x,y) -> Integer.compare(x,y);
+	//方法引用方式
+	Comparator<Integer> com1 = Integer::compare;
+}
+```
+
+3. 类：：实例方法名
+
+若Lambda参数列表中的第一参数是实例方法的调用者，而第二个参数是实例方法的参数时，可以使用ClassName::method（只针对第三个方式）
+```
+/*
+ * 3、类：：实例方法名
+ */
+@Test
+public void test3() {
+	BiPredicate<String, String> bp = (x,y) -> x.equals(y);
+	
+	BiPredicate<String, String> bp1 = String::equals;
+}
+```
+## 3.2 构造器引用
+格式：ClassName::new
+注意：需要调用的构造器的参数列表要与函数式接口中抽象方法的参数列表保持一致。
+
+```
+/*
+ * 构造器引用
+ */
+@Test
+public void test4() {
+	// Lambda方式
+	Supplier<Person> sup1 = ()->new Person();
+	
+	//构造器引用
+	Supplier<Person> sup2 = Person::new;
+	Person person = sup2.get();
+	System.out.println(person);
+	
+	
+	Function<String, Person> fun1 = (x)-> new Person(x);
+	
+	Function<String, Person> fun2 = Person::new;
+	Person person2 = fun2.apply("武汉加油！！");
+	System.out.println(person2.getName());
+}
+```
+
+## 3.3 数组引用
+
+格式：格式：Type::new
+
+```
+/*
+ * 数组引用
+ */
+@Test
+public void test5() {
+	// Lambda方式
+	Function<Integer, String[]> fun1 = (x)-> new String[x];
+	String[] arr1 = fun1.apply(5);
+	System.out.println(arr1.length);
+	//数组引用
+	Function<Integer, String[]> fun2 = String[]::new;
+	String[] arr2 = fun2.apply(88);
+	System.out.println(arr2.length);
+}
+```
+
+# 4. Stream API
+## 4.1 Stream
+流（Stream）是数据渠道，用于操作数据源（集合、数组等）所生成的元素序列。
+“集合讲的是数据，流讲的是计算”
+
+注意：
+1. Stream自己不会存储元素
+2. Stream不会改变源对象。相反，他们会返回一个持有结果的新Stream。
+3. Stream操作是延迟执行的。这意味着他们会等到需要结果的时候才执行。
+
+## 4.2 Stream的操作三个步骤
+1. 创建 Stream
+
+> 一个数据源（如：集合、数组），获取一个流。
+
+2. 中间操作
+
+> 一个中间操作链，对数据源的数据进行处理。
+> 多个中间操作可以连接起来形成一个流水线，除非流水线上触发终止操作，否则中间操作不会执行任何处理，而在终止操作时一次性全部处理，称为“惰性求值”。
+
+3. 终止操作（终端操作）
+
+> 一个终止操作，执行中间操作链，并产生结果。
+
+```
+/*
+ * 创建Stream
+ */
+@Test
+public void test1() {
+	//1. 通过Collection系列集合提供的Stream() 或parallelStream()
+	List<String> list = new ArrayList<>();
+	Stream<String> stream1 = list.stream();
+	
+	//2. 通过 Arrays 中的静态方法stream() 获取数组流
+	Person[] ps = new Person[10];
+	Stream<Person> stream2 = Arrays.stream(ps);
+	
+	//3. 通过Stream类中的静态方法of()
+	Stream<String> stream3 = Stream.of("aa","bb","cc");
+	
+	//4. 创建无限流
+	//迭代
+	Stream<Integer> stream4 = Stream.iterate(0, (x)-> x+2);		stream4.forEach(System.out::println);
+	stream4.limit(10).forEach(System.out::println);
+	
+	//生成
+	Stream<Double> stream5 = Stream.generate(()->Math.random());
+	stream5.forEach(System.out::println);
+}
+```
+
+## 4.3 中间操作——筛选与切片
+- filter(Predicate p)——接收Lambda,从流中排除某些元素。
+- limit(long maxSize)——截断流，使其元素不超过给定数量。
+- skip(long n)——跳过元素，返回一个扔掉了n个元素的流。若流中元素不足n个，返回一个空流。与limit(n)互补。
+- distinct()——筛选，通过流所生成元素的hashCode()和equals()去除重复元素。
+
+```
+List<Person> persons = Arrays.asList(
+			new Person("张一",1),
+			new Person("张二",2),
+			new Person("张三",3),
+			new Person("张四",4),
+			new Person("张五",5),
+			new Person("张六",6),
+			new Person("张六",6),
+			new Person("张六",6)
+		);
+	
+	
+	/*
+	 *	内部迭代：迭代操作由Stream API完成	
+	 *	filter(Predicate p)——接收Lambda,从流中排除某些元素。
+	 *	limit(long maxSize)——截断流，使其元素不超过给定数量。
+	 */
+	@Test
+	public void test1() {
+		Stream<Person> stream = persons.stream()
+									   .filter((e)->{
+										   System.out.println("短路");
+										   return e.getAge()<4;
+									   })
+									   .limit(2);
+		stream.forEach(System.out::println);
+	}
+	
+	/*
+	 * skip(long n)——跳过元素，返回一个扔掉了n个元素的流。若流中元素不足n个，返回一个空流。与limit(n)互补。
+	 */
+	@Test
+	public void test2() {
+		Stream<Person> stream = persons.stream()
+				   .filter((e)->{
+					   System.out.println("短路");
+					   return e.getAge()<4;
+				   })
+				   .skip(2);
+		stream.forEach(System.out::println);
+	}
+	
+	/*
+	 * distinct()——筛选，通过流所生成元素的hashCode()和equals()去除重复元素。
+	 */
+	@Test
+	public void test3() {
+		Stream<Person> stream = persons.stream()
+				   .filter((e)->{
+					   return e.getAge()>3;
+				   })
+				   .distinct();
+		stream.forEach(System.out::println);
+	}
+```
+
+## 4.4 中间操作——映射
+- map——接收Lambda，将元素转换成其他形式或提取信息。接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。
+- flatMap——接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流。
+
+```
+@Test
+public void test5() {
+	List<String> strs = Arrays.asList("张一","张二",	"张三","张四","张五","张六");
+	Stream<String> s1 = strs.stream().map((str)->str+"加油！");
+	s1.forEach(System.out::println);
+	System.out.println("-------------------------");
+	Stream<String> s2 = persons.stream().map(Person::getName);
+	s2.forEach(System.out::println);
+	
+	System.out.println("-------------------------");
+	Stream<Stream<Character>> s3 = strs.stream().map(TestStreamAPI2::filterCharacter);
+	s3.forEach((sm)->{
+		sm.forEach(System.out::println);
+	});
+	
+	System.out.println("------------flatMap-------------");
+	Stream<Character> s4 = strs.stream().flatMap(TestStreamAPI2::filterCharacter);
+	s4.forEach(System.out::println);
+	
+}
+```
+
+## 4.5 中间操作——排序
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
