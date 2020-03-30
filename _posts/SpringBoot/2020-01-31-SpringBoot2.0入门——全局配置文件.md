@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      SpringBoot——全局配置文件
+title:      SpringBoot2.0入门——全局配置文件
 subtitle:   
 date:       2020-01-31
 author:     BY
@@ -8,6 +8,7 @@ header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - SpringBoot
+    - SpringBoot2.0入门
 ---
 
 ......

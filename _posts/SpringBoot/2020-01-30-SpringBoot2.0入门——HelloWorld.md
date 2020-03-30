@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      SpringBoot HelloWorld
+title:      SpringBoot2.0入门——HelloWorld
 subtitle:   
 date:       2020-01-30
 author:     BY
@@ -8,6 +8,7 @@ header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - SpringBoot
+    - SpringBoot2.0入门
 ---
 
 ......

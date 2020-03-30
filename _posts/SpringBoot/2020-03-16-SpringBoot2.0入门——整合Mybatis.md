@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      SpringBoot整合Mybatis
+title:      SpringBoot2.0入门——整合Mybatis
 subtitle:   
 date:       2020-03-16
 author:     BY
@@ -9,6 +9,7 @@ catalog: true
 tags:
 
 - SpringBoot
+- SpringBoot2.0入门
 - Mybatis
 ---
 
