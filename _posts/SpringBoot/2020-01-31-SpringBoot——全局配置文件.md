@@ -439,7 +439,7 @@ class SpringBootConfigApplicationTests {
 
 测试结果：容器中有helloService：true
 
-##2.9 SpringBoot 推荐使用全注解的方式给容器中添加组件
+## 2.9 SpringBoot 推荐使用全注解的方式给容器中添加组件
 
 创建配置类：MyAppConfig
 
