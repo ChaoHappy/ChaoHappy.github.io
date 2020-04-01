@@ -15,15 +15,15 @@ Spring Boot是在Spring框架上创建的一个全新的框架，其设计目的
 
 # 1. 创建maven工程
 
-![](D:\chaohappy\github\chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\1.png)
+![](https://chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\1.png)
 
-![](D:\chaohappy\github\chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\2.png)
+![](https://chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\2.png)
 
-![](D:\chaohappy\github\chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\3.png)
+![](https://chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\3.png)
 
-![](D:\chaohappy\github\chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\4.png)
+![](https://chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\4.png)
 
-![](D:\chaohappy\github\chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\5.png)
+![](https://chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\5.png)
 
 **注意：这个时候项目会报错，原因和解决方案参照这个链接**    [解决方法](https://chaohappy.github.io/2020/03/14/eclipse%E5%88%9B%E5%BB%BASpringBoot%E9%A1%B9%E7%9B%AE%E6%8A%A5%E9%94%99Unknown-line-1-Maven-Configuration-Problem/)
 
@@ -50,25 +50,25 @@ public class TestController {
 
 然后右键点击项目或Application的主函数，选择run as → Java Application： 
 
-![](D:\chaohappy\github\chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\6.png)
+![](https://chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\6.png)
 
 访问[http://localhost:8080](http://localhost:8080/)，页面显示如下： 
 
-![](D:\chaohappy\github\chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\7.png)
+![](https://chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\7.png)
 
 # 3. 打包发布
 
 在eclipse中右击项目，选择run as → Maven build…，如下图所示：
 
-![](D:\chaohappy\github\chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\8.png)
+![](https://chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\8.png)
 
 在Goals中输入`clean package`命令，然后点击下方的run就将项目打包成jar包（初次打包会自动下载一些依赖）。打包完毕后可看到项目目录target文件夹下生成了一个jar文件： 
 
-![](D:\chaohappy\github\chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\9.png)
+![](https://chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\9.png)
 
 生成jar包后，通过cmd  cd到target目录下，执行以下命令`java -jar 01.Start-Spring-Boot-0.0.1-SNAPSHOT.jar ` ： 
 
-![](D:\chaohappy\github\chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\10.png)
+![](https://chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\开启SpringBoot\10.png)
 
 访问[http://localhost:8080](http://localhost:8080/)，页面显示同上。
 
