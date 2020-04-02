@@ -1,20 +1,16 @@
 ---
 layout:     post
-title:      SpringBoot2.0入门——IDEA快速创建项目
+title:      SpringBoot2.0教程——IDEA快速创建项目
 subtitle:   
-date:       2020-01-31
+date:       2020-01-32
 author:     BY
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - SpringBoot
-    - SpringBoot2.0入门
+    - SpringBoot2.0教程
     - IDEA
 ---
-
-......
-
-
 
 ## 1  使用Spring Initializer快速创建SpringBoot项目
 

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      SpringBoot2.0入门——HelloWorld
+title:      SpringBoot2.0教程——IDEA开启SpringBoot
 subtitle:   
 date:       2020-01-30
 author:     BY
@@ -8,10 +8,8 @@ header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - SpringBoot
-    - SpringBoot2.0入门
+    - SpringBoot2.0教程
 ---
-
-......
 
 # 1 创建maven工程（jar）
 
