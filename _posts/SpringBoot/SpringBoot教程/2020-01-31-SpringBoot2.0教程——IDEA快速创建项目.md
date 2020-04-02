@@ -2,7 +2,7 @@
 layout:     post
 title:      SpringBoot2.0教程——IDEA快速创建项目
 subtitle:   
-date:       2020-01-32
+date:       2020-01-31
 author:     BY
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
