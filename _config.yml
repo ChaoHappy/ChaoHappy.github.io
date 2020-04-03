@@ -116,5 +116,8 @@ friends: [
     {
         title: "Hux",
         href: "https://huangxuan.me/"
+    },{
+        title: "mrbird",
+        href: "https://mrbird.cc/tags/"
     }
 ]
