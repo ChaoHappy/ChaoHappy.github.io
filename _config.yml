@@ -122,5 +122,8 @@ friends: [
     },{
         title: "吴俊笔记本",
         href: "https://wujun234.github.io/"
+    },{
+        title: "廖雪峰官网",
+        href: "https://www.liaoxuefeng.com/"
     }
 ]
