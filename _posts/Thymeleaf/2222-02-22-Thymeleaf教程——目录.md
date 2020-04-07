@@ -10,6 +10,12 @@ tags:
     - Thymeleaf教程
 ---
 
+参考链接：
+
+1. <https://www.codercto.com/a/50477.html> 
+2. <https://mrbird.cc/tags/Thymeleaf/> 
+
 # Thymeleaf教程
 
 1. 
+
