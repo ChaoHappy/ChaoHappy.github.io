@@ -7,6 +7,7 @@ author:     ChaoHappy
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
+    - Mybatis
     - Mybatis学习笔记
 ---
 
