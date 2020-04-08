@@ -13,7 +13,7 @@ tags:
 # SpringBoot教程
 
 1. [开启SpringBoot](https://chaohappy.github.io/2020/04/01/SpringBoot2.0%E6%95%99%E7%A8%8B-%E5%BC%80%E5%90%AFSpringBoot/ )
-2. SpringBoot基础配置
+2. [SpringBoot基础配置](https://chaohappy.github.io/2020/04/07/SpringBoot2.0%E6%95%99%E7%A8%8B-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/ )
 3. Spring Boot中使用MyBatis
 4. Spring Boot中使用JdbcTemplate
 5. Spring Boot MyBatis配置Druid多数据源
