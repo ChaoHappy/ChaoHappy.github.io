@@ -76,7 +76,7 @@ public class IndexController {
 
 启动项目，访问http://localhost:8080/person1，页面显示如下：
 
-![](D:\chaohappy\github\chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\全局配置文件\1.png)
+![](https://chaohappy.github.io\images\SpringBoot-学习\SpringBoot教程\全局配置文件\1.png)
 
 在属性非常多的情况下，也可以定义一个和配置文件对应的Bean：
 
