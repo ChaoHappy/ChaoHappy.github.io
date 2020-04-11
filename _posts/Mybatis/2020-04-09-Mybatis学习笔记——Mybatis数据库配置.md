@@ -2,7 +2,7 @@
 layout:     post
 title:      Mybatis学习笔记——Mybatis数据库配置
 subtitle:   
-date:       2020-04-10
+date:       2020-04-09
 author:     ChaoHappy
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
