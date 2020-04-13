@@ -125,5 +125,8 @@ friends: [
     },{
         title: "廖雪峰官网",
         href: "https://www.liaoxuefeng.com/"
+    },{
+        title: "Ant Design Pro Vue",
+        href: "https://pro.loacg.com/"
     }
 ]
