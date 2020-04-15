@@ -128,5 +128,8 @@ friends: [
     },{
         title: "Ant Design Pro Vue",
         href: "https://pro.loacg.com/"
+    },{
+        title: "refactoringguru",
+        href: "https://refactoringguru.cn/"
     }
 ]
