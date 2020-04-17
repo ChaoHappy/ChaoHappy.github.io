@@ -34,7 +34,9 @@ Spring Cloud是一个由各个独立项目组成的综合项目，每个独立�
 
 # 4. SpringCloud与SpringBoot兼容性
 
-由于时效性请关注官网的信息。
+方位下面连接获取JSON数据查看兼容版本。
+
+<https://start.spring.io/actuator/info> 
 
 | Release Train | Boot Version |
 | ------------- | ------------ |
