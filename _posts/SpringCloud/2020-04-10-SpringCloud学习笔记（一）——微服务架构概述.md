@@ -17,7 +17,13 @@ tags:
 
 Spring Cloud=分布式微服务架构的一站式解决方案，是多种微服务架构落地技术的集合体，俗称微服务全家桶。
 
-# 2. Spring Cloud 技术栈
+# 2. 什么是Spring Cloud
+
+[Spring Cloud](https://projects.spring.io/spring-cloud/)是一个基千Spring Boot实现的微服务架构开发工具。它为微服务架构中涉及的配置管理、服务治理、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。Spring Cloud的诞生并不是为了解决微服务中的某一个问题，而是提供了一套解决微服务架构实施的综合性解决方案。
+
+Spring Cloud是一个由各个独立项目组成的综合项目，每个独立项目有着不同的发布节奏，为了管理每个版本的子项目清单，避免Spring Cloud的版本号与其子项目的版本号相混淆，没有采用版本号的方式，而是通过命名的方式。这些版本的名字采用了伦敦地铁站的名字，根据字母表的顺序来对应版本时间顺序。比如”Angel”是Spring Cloud的第一个发行版名称, “Brixton”是Spring Cloud的第二个发行版名称。当一个版本的Spring Cloud项目的发布内容积累到临界点或者一个严重bug解决可用后，就会发布一个”service releases”版本，简称SRX版本，其中X是一个递增的数字，所以Brixton.SR5就是Brixton的第5个Release版本。
+
+# 3. Spring Cloud 技术栈
 
 - 服务注册和服务发现 Eureka
 - 服务负载与调用  Ribbon / Feign
