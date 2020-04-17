@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      SpringCloud学习笔记（一）
+title:      SpringCloud学习笔记(一)
 subtitle:   微服务架构概述
 date:       2020-04-10
 author:     ChaoHappy
