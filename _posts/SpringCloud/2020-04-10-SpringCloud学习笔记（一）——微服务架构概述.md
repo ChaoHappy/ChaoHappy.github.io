@@ -32,7 +32,17 @@ Spring Cloud是一个由各个独立项目组成的综合项目，每个独立�
 - 服务分布式配置 Spring Cloud Config
 - 服务开发 Spring Cloud
 
+# 4. SpringCloud与SpringBoot兼容性
 
+由于时效性请关注官网的信息。
+
+| Release Train | Boot Version |
+| ------------- | ------------ |
+| Hoxton        | 2.2.x        |
+| Greenwich     | 2.1.x        |
+| Finchley      | 2.0.x        |
+| Edgware       | 1.5.x        |
+| Dalston       | 1.5.x        |
 
 
 
