@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      SpringCloud学习笔记(二)
+title:      SpringCloud学习笔记（二）
 subtitle:   开启SpringCloud
 date:       2020-04-11
 author:     ChaoHappy
@@ -10,8 +10,6 @@ tags:
     - SpringCloud
     - SpringCloud学习笔记
 ---
-
-- 
 
 
 
