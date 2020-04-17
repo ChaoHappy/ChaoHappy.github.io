@@ -46,5 +46,14 @@ Spring Cloud是一个由各个独立项目组成的综合项目，每个独立�
 | Edgware       | 1.5.x        |
 | Dalston       | 1.5.x        |
 
+# 5. 学习版本
 
+本次学习的版本如下：
+
+- SpringBoot——2.2.2.RELEASE
+- SpringCloud——Hoxton.SR1
+- SpringCloud alibaba——2.1.0.RELEASE
+- java——Java8
+- Maven——3.5及以上
+- Mysql——5.7及以上
 
