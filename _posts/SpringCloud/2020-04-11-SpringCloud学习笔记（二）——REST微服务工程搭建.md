@@ -499,3 +499,8 @@ public class OrderController {
 调用订单模块的新增和查询接口都显示成功，所以初次学习SpringCloud REST微服务工程搭建就完成了。
 
 目前代码还比较简单，后续还会不断学习SpringCloud子项目顺便完善代码。
+
+# 5. 附录
+
+[源码](https://github.com/ChaoHappy/Spring-Cloud-Learn)
+
