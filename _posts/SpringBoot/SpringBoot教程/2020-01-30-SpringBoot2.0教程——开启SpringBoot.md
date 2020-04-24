@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      SpringBoot2.0教程——开启SpringBoot
-subtitle:   
+title:      SpringBoot2.0教程（一）
+subtitle:   开启SpringBoot
 date:       2020-04-01
 author:     BY
 header-img: img/post-bg-ios9-web.jpg
