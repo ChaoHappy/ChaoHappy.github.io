@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      SpringBoot2.0教程——基础配置
-subtitle:   
+title:      SpringBoot2.0教程（三）
+subtitle:   基础配置
 date:       2020-04-07
 author:     ChaoHappy
 header-img: img/post-bg-ios9-web.jpg
