@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      SpringBoot2.0教程
+title:      SpringBoot2.0教程（四）
 subtitle:   整合Spring-Data-JPA
 date:       2020-04-08
 author:     ChaoHappy
