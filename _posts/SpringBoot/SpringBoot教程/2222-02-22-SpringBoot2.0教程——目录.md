@@ -15,39 +15,40 @@ tags:
 1. [开启SpringBoot](https://chaohappy.github.io/2020/04/01/SpringBoot2.0%E6%95%99%E7%A8%8B-%E5%BC%80%E5%90%AFSpringBoot/ )
 2. [定制Banner](https://chaohappy.github.io/2020/04/07/SpringBoot2.0%E6%95%99%E7%A8%8B-%E5%AE%9A%E5%88%B6Banner/)
 3. [SpringBoot基础配置](https://chaohappy.github.io/2020/04/07/SpringBoot2.0%E6%95%99%E7%A8%8B-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/ )
-4. [Spring Boot中使用MyBatis](https://chaohappy.github.io/2020/04/08/SpringBoot2.0%E6%95%99%E7%A8%8B-%E6%95%B4%E5%90%88Spring-Data-JPA/)
-5. Spring Boot中使用JdbcTemplate
-6. Spring Boot MyBatis配置Druid多数据源
-7. Spring Boot JdbcTemplate配置Druid多数据源
-8. Spring Boot AOP记录用户操作日志
-9. Spring Boot中使用thymeleaf
-10. Spring Boot中使用Redis缓存数据
-11. Spring Boot中使用Ehcache缓存数据
-12. Spring Boot中的JSON技术
-13. Spring Boot中编写单元测试
-14. Spring Boot整合Swagger2构建RESTful API
-15. 使用Actuator监控Spring Boot应用
-16. 使用Spring Boot发送邮件
-17. 使用Spring Boot Admin监控服务
-18. Spring Boot Devtools热部署
-19. Spring Boot logback日志配置
-20. Spring Boot项目打包成war包
-21. Linux下部署Spring Boot jar
-22. Spring Boot中使用Jsoup防御XSS攻击
-23. Spring Boot异常处理
-24. Spring Boot中使用过滤器和拦截器
-25. Spring Boot整合MyBatis通用Mapper和PageHelper
-26. 深入学习Spring Boot自动装配
-27. 深入学习Spring Boot中的SpringApplication
-28. Spring Boot配合Hibernate Validator参数校验
-29. 自定义Spring Boot 内容协商
-30. Spring Boot 中处理跨域
-31. Spring Boot 中的异步调用
-32. Spring Boot 整合Kafka
-33. Spring Boot整合Mongo DB
-34. Spring Boot 2.0 WebFlux编程
-35. Spring Boot WebFlux增删改查样例
-36. Spring Boot整合WebSocket
+4. [整合Spring-Data-JPA](https://chaohappy.github.io/2020/04/08/SpringBoot2.0%E6%95%99%E7%A8%8B-%E6%95%B4%E5%90%88Spring-Data-JPA/)
+5. Spring Boot中使用MyBatis
+6. Spring Boot中使用JdbcTemplate
+7. Spring Boot MyBatis配置Druid多数据源
+8. Spring Boot JdbcTemplate配置Druid多数据源
+9. Spring Boot AOP记录用户操作日志
+10. Spring Boot中使用thymeleaf
+11. Spring Boot中使用Redis缓存数据
+12. Spring Boot中使用Ehcache缓存数据
+13. Spring Boot中的JSON技术
+14. Spring Boot中编写单元测试
+15. Spring Boot整合Swagger2构建RESTful API
+16. 使用Actuator监控Spring Boot应用
+17. 使用Spring Boot发送邮件
+18. 使用Spring Boot Admin监控服务
+19. Spring Boot Devtools热部署
+20. Spring Boot logback日志配置
+21. Spring Boot项目打包成war包
+22. Linux下部署Spring Boot jar
+23. Spring Boot中使用Jsoup防御XSS攻击
+24. Spring Boot异常处理
+25. Spring Boot中使用过滤器和拦截器
+26. Spring Boot整合MyBatis通用Mapper和PageHelper
+27. 深入学习Spring Boot自动装配
+28. 深入学习Spring Boot中的SpringApplication
+29. Spring Boot配合Hibernate Validator参数校验
+30. 自定义Spring Boot 内容协商
+31. Spring Boot 中处理跨域
+32. Spring Boot 中的异步调用
+33. Spring Boot 整合Kafka
+34. Spring Boot整合Mongo DB
+35. Spring Boot 2.0 WebFlux编程
+36. Spring Boot WebFlux增删改查样例
+37. Spring Boot整合WebSocket
 
 # Spring Boot & Security教程
 
